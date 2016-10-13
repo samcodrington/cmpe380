@@ -10,7 +10,12 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<String> inputData = readFile("Graph1.txt");
+        questionOne("Graph1.txt");
+        questionOne("Graph2.txt");
+    }
+
+    private static void questionOne(String fileName) {
+        ArrayList<String> inputData = readFile(fileName);
 
         //Creates a graph of vertices, with numbers of 1 to n, indexed from 0 to n-1
         graphAidan tableMap = new graphAidan(inputData);
@@ -43,7 +48,7 @@ public class Main {
                     tableMap.getVertex(neighborIndex).setColor("Red");
             }
         }
-
+        System.out.println("The graph, " + fileName + ", can be two-colored!");
     }
 
     /**
